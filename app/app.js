@@ -1,40 +1,52 @@
-function initListeners() {}
+import { changePage } from "../services/model.js";
+
+
+
+function route() {
+    let hashtag = window.location.hash;
+    let pageID = hashtag.replace("#","");
+    let path = pageID.split("/")
+    // console.log("hash ", hashtag)
+    // console.log("SubName" , subPage)
+    changePage(path) 
+}
+
+function initListeners() {
+    
+    $(".login").on("click", (e) => {
+        if (userID != "" || pass != "") {
+            $("#signed-in").toggle();
+        }
+        else {
+        $("#modal").toggle()
+        }
+    })
+     $(".close").on("click",(e) => {
+        $("#modal").toggle();
+    })
+    $("#submit").on("click",(e) => {
+LogIn();
+    })
+    $("#logout").on("click",(e) => {
+        $("#signed-in").toggle();
+        LogOut()
+    })
+      $(".sign-close").on("click",(e) => {
+        $("#signed-in").toggle();
+    })
+}
+
+
+function initSite(){
+    $(window).on("hashchange",route)
+    route();
+}
  
 $(document).ready(function () {
 initListeners();
-});
-
-function changeRoute() {
-let hashTag = window.location.hash;
- let pageID = hashTag.replace('#', '');
-//   console.log(hashTag + ' ' + pageID);
-
-if (pageID != '') {
-$.get(`pages/pageID/pageID.html`, function (data) {
- console.log('data ' + data);
- $('#app').html(data);
-});
-} else {
-$.get(`pages/home/home.html`, function (data) {
-console.log('data ' + data);
- $('#app').html(data);
-});
-}
-}
-
-function initURLListener() {
-$(window).on('hashchange', changeRoute);
-changeRoute();
-}
-
-$(document).ready(function () {
-initURLListener();
+initSite();
 });
 
 
 
 
-
-function toggleMenu(menu) {
-    menu.classList.toggle("open")
-}
