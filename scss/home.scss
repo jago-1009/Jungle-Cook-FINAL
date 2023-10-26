@@ -1,6 +1,71 @@
-.content {
+.home-content {
+   max-width:100%;
+    height: 800px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: rebeccapurple;
+    justify-content: space-between;
+   
+    .hero-home {
+  
+        height:100%;
+        width:100%;
+    background-image:linear-gradient(rgba(242,92,84, 0.5), rgba(242, 92, 84, 0.5)), url(../assets/img/hero.jpg);
+    background-size:cover;
+
+    .hero-circle-holder {
+        position: relative;
+        top:10%;
+        margin:0 auto;
+        width:500px;
+        height:500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .circle-big {
+            width:357.58px;
+            height:357.58px;
+            background-color: $site-yellow;
+            margin: 0 auto;
+            border-radius: 50%;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+           .title-big {
+            margin: 0 auto;
+            font-family: 'Caveat Bold';
+            font-size: 24px;
+           }
+           .subtitle-big {
+            position: relative;
+            bottom:10%;
+            width:164px;
+            font-size: 13px;
+            font-family: 'Lato';
+           }
+        }
+        .circle-small {
+            bottom:60%;
+            left:67%;
+            position: absolute;
+            width:167.88px;
+            height:167.88px;
+            background-color: $site-light-pink;
+            border-radius: 50%;
+            .title-small {
+                font-size:13px;
+                position: relative;
+                left:10%;
+                top:25%;
+                height:40px;
+                width: 100px;
+                margin: 0 auto;
+                font-family: 'Lato';
+            }
+        }
+        
+    }
+}
 }

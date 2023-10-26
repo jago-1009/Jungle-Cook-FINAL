@@ -1,23 +1,38 @@
 .nav-holder {
     height:100px;
-    background-color:pink;
     padding: 0 20px;
-
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     a {
         text-decoration: none;
+        color:#000;
     }
-    .logo {
-        a {
-            font-weight: bold;
-        color:brown;
-        }
-    }
+   
     .nav-links {
         ul {
+            text-align: left;
+            .login {
+                border-radius: 30px;
+                  background-color: $site-yellow;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:158px;
+                    height:52px;
+                -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+                    box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+                }
+            font-family: 'Caveat';
+            text-align: left;
             li {
+                margin-right: 20px;
+                .border {
+                    width:54px;
+                    height:2px;
+                    background-color: #000;
+                }
                 transition: 0.3s;
             }
             li:hover {
@@ -30,10 +45,8 @@
             align-items: center;
             justify-content: space-around;
             a {
-                .login {
-                        background-color: $site-yellow;
-                    }
-                padding-left: 20px;
+                
+     
                 font-size: 25px;
             }
             

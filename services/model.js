@@ -1,4 +1,3 @@
-var lastHash = "";
 
 
 export function changePage(pageID) {
