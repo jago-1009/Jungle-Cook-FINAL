@@ -68,11 +68,19 @@
     .mobile-menu {
         display: none;
         position: absolute;
-        top:50px;
+        bottom:75%;
         left:0;
         height:calc(100vh - 50px);
         width:100%;
         li {
+            font-family: "Caveat";
+            -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+                box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+            text-align: center;
+            width:100px;
+            list-style: none;
+            background-color: $site-yellow;
+            border-radius: 30px;
             margin-bottom:10px;
         }
     }

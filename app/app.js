@@ -1,5 +1,6 @@
 import { changePage } from "../services/model.js";
 
+
 function route() {
     let hashtag = window.location.hash;
     let pageID = hashtag.replace("#","");
@@ -21,7 +22,6 @@ $(document).ready(function () {
 initListeners();
 initSite();
 });
-
 
 
 
