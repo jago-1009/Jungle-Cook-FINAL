@@ -6,14 +6,11 @@
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 16px;
-}
-
-#app {
-  height: 100%;
 }
 
 @font-face {
@@ -135,20 +132,12 @@ h1, h2, h3, h4, h5, h6, p {
 .nav-holder .mobile-menu {
   display: none;
   position: absolute;
-  bottom: 75%;
+  top: 50px;
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
 }
 .nav-holder .mobile-menu li {
-  font-family: "Caveat";
-  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-  text-align: center;
-  width: 100px;
-  list-style: none;
-  background-color: #FFD972;
-  border-radius: 30px;
   margin-bottom: 10px;
 }
 
@@ -180,7 +169,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .home-content {
   max-width: 100%;
-  height: 115%;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -190,16 +179,13 @@ h1, h2, h3, h4, h5, h6, p {
   width: 100%;
   background-image: linear-gradient(rgba(242, 92, 84, 0.5), rgba(242, 92, 84, 0.5)), url(../img/hero.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-attachment: fixed;
 }
 .home-content .hero-home .hero-circle-holder {
   position: relative;
+  top: 10%;
   margin: 0 auto;
-  max-width: 500px;
+  width: 500px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,156 +234,26 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Lato";
 }
 
-@media (max-width: 768px) {
-  .hero-circle-holder .circle-big {
-    width: 257px !important;
-    height: 257px !important;
-    font-size: 50% !important;
-  }
-  .hero-circle-holder .circle-small {
-    width: 121px !important;
-    height: 121px !important;
-    left: 60% !important;
-    bottom: 70% !important;
-  }
-  .hero-circle-holder .circle-small .title-small {
-    position: relative;
-    top: 35% !important;
-    font-size: 8px !important;
-    width: 82px !important;
-  }
-}
-@media (max-width: 360px) {
-  .hero-circle-holder .circle-big {
-    width: 257px !important;
-    height: 257px !important;
-    font-size: 50% !important;
-  }
-  .hero-circle-holder .circle-small {
-    width: 121px !important;
-    height: 121px !important;
-    left: 60% !important;
-  }
-  .hero-circle-holder .circle-small .title-small {
-    position: relative;
-    top: 35% !important;
-    font-size: 8px !important;
-    width: 82px !important;
-  }
-}
 .login-content {
+  min-height: 800px;
+  height: 100%;
   background-color: #FFD972;
-  min-height: 100%;
-  max-width: 100%;
 }
 .login-content .login-form-holder {
-  padding-top: 200px;
+  margin-top: 200px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}
-.login-content .login-form-holder button {
-  background-color: #FFD972;
-  border-radius: 30px;
-  font-family: "Caveat";
-  font-size: 25px;
-  border: none;
-  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-}
-.login-content .login-form-holder input {
-  margin-bottom: 70px;
-  height: 20px;
-  width: 206px;
-  font-size: 12px;
-  background-color: #FFD972;
-  font-family: "Lato Regular";
-  border: 0px;
-  border-bottom: 2px solid #000;
-}
-.login-content .login-form-holder input::placeholder {
-  color: #000;
 }
 .login-content .login-form-holder .login-form {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.login-content .login-form-holder .login-form .login-title {
-  margin-bottom: 70px;
-  font-size: 30px;
-  font-family: "Lato Black";
-  display: flex;
-  width: 183px;
-  height: 40px;
-  position: relative;
-  right: 10px;
-}
-.login-content .login-form-holder .login-form #login-button {
-  width: 209px;
-  height: 52px;
-}
 .login-content .login-form-holder .signup-form {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.login-content .login-form-holder .signup-form .signup-title-holder {
-  width: 200px;
-}
-.login-content .login-form-holder .signup-form .signup-title-holder .signup-title {
-  margin-bottom: 70px;
-  font-family: "Lato Black";
-  font-size: 30px;
-}
-.login-content .login-form-holder .signup-form #signup-button {
-  width: 250px;
-  height: 52px;
-}
-
-@media (max-width: 768px) {
-  .login-form-holder {
-    flex-direction: column;
-  }
-  .login-form-holder .login-form {
-    margin-bottom: 30px;
-  }
-  .login-form-holder .signup-form {
-    margin-bottom: 40px;
-  }
-}
-.footer {
-  margin-top: 50px;
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.footer .copyright {
-  font-size: 10px;
-  font-family: "Lato Thin Italic";
-}
-.footer .links a {
-  text-decoration: none;
-  color: black;
-  font-size: 10px;
-  font-family: "Lato Thin Italic";
-}
-.footer .links .login {
-  font-family: "Gill Sans Italic";
-}
-.footer .socials {
-  display: flex;
-}
-.footer .socials .facebook {
-  width: 19px;
-  height: 19px;
-  background-image: url(../assets/img/facebook.svg);
-}
-.footer .socials .instagram {
-  width: 19px;
-  height: 19px;
-  background-image: url(../assets/img/instagram.svg);
 }
 
 /*# sourceMappingURL=styles.css.map */
