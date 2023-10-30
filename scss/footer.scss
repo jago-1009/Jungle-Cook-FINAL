@@ -1,0 +1,38 @@
+.footer {
+    margin-top:50px;
+    .copyright {
+        font-size: 10px;
+        font-family: 'Lato Thin Italic'
+    }
+    .links {
+        a {
+            text-decoration: none;
+            color:black;
+            font-size: 10px;
+            font-family: 'Lato Thin Italic';
+        }
+        .login {
+
+            font-family: 'Gill Sans Italic';
+        }
+    }
+flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .socials {
+        display: flex;
+    .facebook {
+
+        width:19px;
+        height:19px;
+        background-image: url(../assets/img/facebook.svg);
+    }
+        .instagram {
+    
+            width: 19px;
+            height: 19px;
+            background-image: url(../assets/img/instagram.svg);
+        }
+    }
+}
