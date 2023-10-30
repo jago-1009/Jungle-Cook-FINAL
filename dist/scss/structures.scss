@@ -5,14 +5,12 @@
 }
 html, body {
  height: 100%;
-
+ overflow:hidden;
 }
 h1, h2, h3, h4, h5, h6, p {
  margin-bottom: 16px
 }
-#app {
-    height:100%;
-}
+
 @font-face {
     font-family: "Caveat Bold";
     src: url(../assets/fonts/Caveat-Bold.ttf);
