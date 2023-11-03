@@ -1,91 +1,92 @@
 .login-content {
-    background-color: $site-yellow;
-    min-height:100%;
-    max-width: 100%;
-    
-   
-    .login-form-holder {
-        
-        button {
-                
-                background-color: $site-yellow;
-                border-radius: 30px;
-                font-family: 'Caveat';
-                font-size: 25px;
-                border: none;
-                -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-                box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-            }
-        input {
-                margin-bottom: 70px;
-                height: 20px;
-                width: 206px;
-                font-size: 12px;
-                background-color: $site-yellow;
-                font-family: 'Lato Regular';
-                border: 0px;
-                border-bottom: 2px solid #000;
-        
-            }
-        
-            input::placeholder {
-                color: #000;
-        
-            }
-        padding-top:200px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-       .login-form {
-        
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        .login-title {
-            margin-bottom: 70px;
-            font-size: 30px;
-            font-family: 'Lato Black';
-            display: flex;
-            width:183px;
-            height:40px;
-            position: relative;
-            right:10px;
-            
-        }
-        #login-button {
-            width: 209px;
-            height: 52px;
-        }
-       
-       }
-       .signup-form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        .signup-title-holder {
-            width:200px;
-        .signup-title {
-            margin-bottom: 70px;
-            font-family: 'Lato Black';
-            font-size: 30px;
-        }
-    }
-        #signup-button {
-                width: 250px;
-                height: 52px;
-            }
-       }
-        
-    }
+	background-color: $site-yellow;
+	min-height: 100%;
+	max-width: 100%;
+
+	.login-form-holder {
+		input {
+			margin-bottom: 70px;
+			height: 20px;
+			width: 206px;
+			font-size: 12px;
+			background-color: $site-yellow;
+			font-family: "Lato Regular";
+			border: 0px;
+			border-bottom: 2px solid #000;
+		}
+
+		input::placeholder {
+			color: #000;
+		}
+		padding-top: 200px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		.login-form {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			.login-title {
+				margin-bottom: 70px;
+				font-size: 30px;
+				font-family: "Lato Black";
+				display: flex;
+				width: 183px;
+				height: 40px;
+				position: relative;
+				right: 10px;
+			}
+			#loginbutton {
+				width: 209px;
+				height: 52px;
+				z-index: 99;
+				cursor: pointer;
+
+				background-color: $site-yellow;
+				border-radius: 30px;
+				font-family: "Caveat";
+				font-size: 25px;
+				border: none;
+				-webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+				box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+			}
+		}
+		.signup-form {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			.signup-title-holder {
+				width: 200px;
+				.signup-title {
+					margin-bottom: 70px;
+					font-family: "Lato Black";
+					font-size: 30px;
+				}
+			}
+			#signupbutton {
+				width: 250px;
+				height: 52px;
+				z-index: 99;
+				cursor: pointer;
+				background-color: $site-yellow;
+				border-radius: 30px;
+				font-family: "Caveat";
+				font-size: 25px;
+				border: none;
+				-webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+				box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+			}
+		}
+	}
 }
-@media (max-width:768px) {
-    .login-form-holder {
-        flex-direction: column;
-        .login-form {
-            margin-bottom:30px;
-        }
-        .signup-form {
-            margin-bottom:40px;
-        }
-    }
+@media (max-width: 768px) {
+	.login-form-holder {
+		flex-direction: column;
+		.login-form {
+			margin-bottom: 30px;
+		}
+		.signup-form {
+			margin-bottom: 40px;
+		}
+	}
 }

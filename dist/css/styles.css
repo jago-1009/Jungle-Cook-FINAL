@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-bottom: 16px;
 }
 
@@ -83,6 +90,7 @@ h1, h2, h3, h4, h5, h6, p {
 .nav-holder a {
   text-decoration: none;
   color: #000;
+  margin: 0 auto;
 }
 .nav-holder .nav-links ul {
   text-align: left;
@@ -94,9 +102,20 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
   justify-content: space-around;
 }
+.nav-holder .nav-links ul .logout {
+  border-radius: 30px;
+  background-color: #ffd972;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 158px;
+  height: 52px;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+}
 .nav-holder .nav-links ul .login {
   border-radius: 30px;
-  background-color: #FFD972;
+  background-color: #ffd972;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,12 +152,23 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 6px 0;
 }
 .nav-holder .mobile-menu {
+  z-index: 99;
   display: none;
   position: absolute;
-  bottom: 75%;
+  bottom: 50%;
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
+}
+.nav-holder .mobile-menu .logout {
+  border-radius: 30px;
+  background-color: #ffd972;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
 }
 .nav-holder .mobile-menu li {
   font-family: "Caveat";
@@ -147,14 +177,16 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
   width: 100px;
   list-style: none;
-  background-color: #FFD972;
+  background-color: #ffd972;
   border-radius: 30px;
   margin-bottom: 10px;
 }
 
 .open .mobile-menu {
+  position: absolute;
+  bottom: 35%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
@@ -169,6 +201,9 @@ h1, h2, h3, h4, h5, h6, p {
   transition: 0.3s;
   transform: rotate(-45deg) translate(-6px, 6px);
 }
+.open li {
+  margin: 0 auto;
+}
 
 @media all and (max-width: 768px) {
   .nav-links {
@@ -180,7 +215,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .home-content {
   max-width: 100%;
-  height: 115%;
+  height: 150%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -207,10 +242,10 @@ h1, h2, h3, h4, h5, h6, p {
 .home-content .hero-home .hero-circle-holder .circle-big {
   width: 357.58px;
   height: 357.58px;
-  background-color: #FFD972;
+  background-color: #ffd972;
   margin: 0 auto;
   border-radius: 50%;
-  z-index: 99;
+  z-index: 98;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -234,7 +269,7 @@ h1, h2, h3, h4, h5, h6, p {
   position: absolute;
   width: 167.88px;
   height: 167.88px;
-  background-color: #FCBCB8;
+  background-color: #fcbcb8;
   border-radius: 50%;
 }
 .home-content .hero-home .hero-circle-holder .circle-small .title-small {
@@ -249,6 +284,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media (max-width: 768px) {
+  .hero-circle-holder {
+    top: 10%;
+  }
   .hero-circle-holder .circle-big {
     width: 257px !important;
     height: 257px !important;
@@ -286,7 +324,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 .login-content {
-  background-color: #FFD972;
+  background-color: #ffd972;
   min-height: 100%;
   max-width: 100%;
 }
@@ -296,21 +334,12 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
   justify-content: space-evenly;
 }
-.login-content .login-form-holder button {
-  background-color: #FFD972;
-  border-radius: 30px;
-  font-family: "Caveat";
-  font-size: 25px;
-  border: none;
-  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
-}
 .login-content .login-form-holder input {
   margin-bottom: 70px;
   height: 20px;
   width: 206px;
   font-size: 12px;
-  background-color: #FFD972;
+  background-color: #ffd972;
   font-family: "Lato Regular";
   border: 0px;
   border-bottom: 2px solid #000;
@@ -333,9 +362,18 @@ h1, h2, h3, h4, h5, h6, p {
   position: relative;
   right: 10px;
 }
-.login-content .login-form-holder .login-form #login-button {
+.login-content .login-form-holder .login-form #loginbutton {
   width: 209px;
   height: 52px;
+  z-index: 99;
+  cursor: pointer;
+  background-color: #ffd972;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 25px;
+  border: none;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
 }
 .login-content .login-form-holder .signup-form {
   display: flex;
@@ -350,9 +388,18 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Lato Black";
   font-size: 30px;
 }
-.login-content .login-form-holder .signup-form #signup-button {
+.login-content .login-form-holder .signup-form #signupbutton {
   width: 250px;
   height: 52px;
+  z-index: 99;
+  cursor: pointer;
+  background-color: #ffd972;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 25px;
+  border: none;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 768px) {
@@ -398,6 +445,13 @@ h1, h2, h3, h4, h5, h6, p {
   width: 19px;
   height: 19px;
   background-image: url(../assets/img/instagram.svg);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    top: 5%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
