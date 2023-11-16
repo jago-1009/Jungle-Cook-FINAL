@@ -1,0 +1,61 @@
+.my-recipe-box-holder {
+    position: relative;
+    margin-bottom: 50px;
+}
+.my-recipes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.button-holder {
+    margin-top: 15px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    .edit-button, .delete-button {
+        cursor: pointer;
+        border-style: none;
+        height:42px;
+        width:128px;
+        border-radius: 30px;
+        font-family: 'Caveat';
+        font-size: 20px;
+        background-color: $site-yellow;
+        -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+            box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+    }
+    .edit-button a {
+        text-decoration: none;
+        color:black;
+    }
+}
+.view-button-holder {
+
+    width: 300px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .view-button {
+        cursor: pointer;
+        position: absolute;
+        bottom:50%;
+        border-style: none;
+            height: 42px;
+            width: 128px;
+            border-radius: 30px;
+            font-family: 'Caveat';
+            font-size: 20px;
+            background-color: $site-yellow;
+            -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+            box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.no-recipes-msg {
+    font-family: "Caveat";
+    font-size: 25px;
+}

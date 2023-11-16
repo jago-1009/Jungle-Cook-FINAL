@@ -1,9 +1,15 @@
 .login-content {
+	.footer {
+		margin-top: 0px;
+		padding-top: 50px;
+		background-color: $site-yellow;
+	}
 	background-color: $site-yellow;
-	min-height: 100%;
-	max-width: 100%;
+height: 100%;
+	width: 100%;
 
 	.login-form-holder {
+		background-color: $site-yellow;
 		input {
 			margin-bottom: 70px;
 			height: 20px;

@@ -1,0 +1,31 @@
+.submitChangesBtn {
+    font-family: "Caveat";
+        font-size: 25px;
+        cursor: pointer;
+        width: 150px;
+        height: 50px;
+        background-color: $site-dark-pink;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        border-radius: 30px;
+        margin-bottom: 109px;
+    }
+    
+    .IngredEditBtn,
+    .InstrEditBtn {
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        bottom: 5px;
+        right: 0;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: $site-dark-pink;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 30px;
+}

@@ -20,6 +20,8 @@ p {
 }
 
 #app {
+  display: flex;
+  width: 100%;
   height: 100%;
 }
 
@@ -213,14 +215,20 @@ p {
     display: block !important;
   }
 }
+#my-recipes {
+  display: none;
+}
+
 .home-content {
-  max-width: 100%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow-y: auto;
 }
 .home-content .hero-home {
+  overflow-y: auto;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(rgba(242, 92, 84, 0.5), rgba(242, 92, 84, 0.5)), url(../assets/img/hero.jpg);
@@ -325,10 +333,16 @@ p {
 }
 .login-content {
   background-color: #ffd972;
-  min-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+.login-content .footer {
+  margin-top: 0px;
+  padding-top: 50px;
+  background-color: #ffd972;
 }
 .login-content .login-form-holder {
+  background-color: #ffd972;
   padding-top: 200px;
   display: flex;
   align-items: center;
@@ -414,6 +428,10 @@ p {
   }
 }
 .footer {
+  z-index: 100;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 25px;
   margin-top: 50px;
   flex-direction: row;
   display: flex;
@@ -452,6 +470,479 @@ p {
     position: relative;
     top: 5%;
   }
+}
+.create-recipe-holder {
+  position: relative;
+  height: 100%;
+}
+
+.not-signed-in-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Caveat";
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.form-title {
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 78px;
+}
+
+.not-signed-in-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+.not-signed-in-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  background-color: #ffd972;
+  width: 175px;
+  height: 50px;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 24px;
+}
+.not-signed-in-btn a:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  align-items: center;
+  justify-content: center;
+}
+
+.formHolder {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.formHolder input {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  padding-left: 20px;
+}
+
+.formHolder input ::placeholder {
+  color: black;
+  font-family: "Lato Light";
+  font-size: 20px;
+}
+
+.formTop {
+  position: relative;
+}
+
+.formTop .imageBtn {
+  cursor: pointer;
+  top: 15px;
+  right: 0;
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 17x;
+}
+
+.formIngred,
+.formInstr {
+  position: relative;
+  margin-top: 100px;
+}
+
+.formInstr {
+  margin-bottom: 109px;
+}
+
+.SubmitBtn {
+  font-family: "Caveat";
+  font-size: 25px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-bottom: 109px;
+}
+
+.IngredAddBtn,
+.InstrAddBtn {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  bottom: 5px;
+  right: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+}
+
+.addBtn {
+  cursor: pointer;
+  bottom: 5px;
+  right: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.my-recipe-box-holder {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.my-recipes {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.button-holder {
+  margin-top: 15px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.button-holder .edit-button, .button-holder .delete-button {
+  cursor: pointer;
+  border-style: none;
+  height: 42px;
+  width: 128px;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 20px;
+  background-color: #ffd972;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+}
+.button-holder .edit-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.view-button-holder {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-button-holder .view-button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 50%;
+  border-style: none;
+  height: 42px;
+  width: 128px;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 20px;
+  background-color: #ffd972;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+}
+
+.no-recipes-msg {
+  font-family: "Caveat";
+  font-size: 25px;
+}
+
+.recipe-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(167, 232, 189, 0.5), rgba(167, 232, 189, 0.5)), url("../assets/img/recipe-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+.recipe-box {
+  width: 524px;
+  height: 263px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.recipe-photo {
+  width: 300px;
+  height: 263px;
+  border-radius: 20px;
+  background-size: cover;
+}
+
+.recipe-desc {
+  display: flex;
+  width: 224px;
+  height: 263px;
+  background-color: #fff;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.recipe-desc-title {
+  font-family: "Lato Black";
+  font-size: 15px;
+  text-align: left;
+  width: 130px;
+  border-bottom: 2px solid black;
+}
+
+.recipe-desc-text {
+  width: 140px;
+  font-size: 9px;
+  font-family: "Lato";
+}
+
+.recipe-desc-time, .recipe-desc-serving-size {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  font-family: "Lato";
+  font-size: 10px;
+}
+.recipe-desc-time .recipe-desc-time-logo, .recipe-desc-serving-size .recipe-desc-time-logo {
+  width: 23px;
+  height: 23px;
+  background-image: url(../assets/img/time.svg);
+  margin-right: 20px;
+}
+.recipe-desc-time .recipe-desc-serving-logo, .recipe-desc-serving-size .recipe-desc-serving-logo {
+  width: 23px;
+  height: 23px;
+  background-image: url(../assets/img/servings.svg);
+  margin-right: 20px;
+}
+
+.pizza {
+  background-image: url(../assets/img/recipe-pizza.jpg);
+  background-size: cover;
+}
+
+.burger {
+  background-image: url(../assets/img/recipe-burger.jpg);
+  background-size: cover;
+}
+
+.chow-mein {
+  background-image: url(../assets/img/recipe-chowmein.jpg);
+  background-size: cover;
+}
+
+.biryani {
+  background-image: url(../assets/img/recipe-pilaf.jpg);
+  background-size: cover;
+}
+
+.browse-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.recipe-box {
+  margin-bottom: 50px;
+}
+
+.browse-title {
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  margin-left: 5%;
+  margin-bottom: 52px;
+}
+
+.submitChangesBtn {
+  font-family: "Caveat";
+  font-size: 25px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-bottom: 109px;
+}
+
+.IngredEditBtn,
+.InstrEditBtn {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  bottom: 5px;
+  right: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #efa7a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+}
+
+.view-recipe {
+  width: 100%;
+  height: 100%;
+}
+
+.view-recipe-holder {
+  margin-top: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.view-recipe-holder .view-recipe-desc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 421px;
+}
+.view-recipe-holder .view-recipe-desc .desc-left {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  margin-right: 40px;
+}
+.view-recipe-holder .view-recipe-desc .desc-left .desc-image {
+  width: 468px;
+  height: 421px;
+  background-size: cover;
+}
+.view-recipe-holder .view-recipe-desc .desc-left .desc-title {
+  top: 175px;
+  left: 75px;
+  position: relative;
+  white-space: nowrap;
+  height: 65px;
+  font-family: "Lato Black";
+  font-size: 25px;
+  transform: rotate(-90deg);
+}
+.view-recipe-holder .view-recipe-desc .desc-right {
+  font-family: "Lato Black";
+  width: 50%;
+}
+.view-recipe-holder .view-recipe-desc .desc-right .desc-right-title {
+  font-size: 25px;
+}
+.view-recipe-holder .view-recipe-desc .desc-right .desc-right-description {
+  margin-top: 35px;
+  font-family: "Caveat";
+  font-size: 20px;
+  margin-bottom: 38px;
+}
+.view-recipe-holder .view-recipe-desc .desc-right .desc-right-time-title, .view-recipe-holder .view-recipe-desc .desc-right .desc-right-serving-title {
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+.view-recipe-holder .view-recipe-desc .desc-right .desc-right-time, .view-recipe-holder .view-recipe-desc .desc-right .desc-right-serving {
+  font-size: 20px;
+  margin-bottom: 38px;
+}
+.view-recipe-holder .view-recipe-ingredients {
+  width: 100%;
+  margin-left: 27%;
+}
+.view-recipe-holder .view-recipe-ingredients .ingredients-title {
+  font-family: "Lato Black";
+  font-size: 25px;
+  margin-bottom: 35px;
+  margin-top: 58px;
+}
+.view-recipe-holder .view-recipe-ingredients ul {
+  font-family: "Caveat";
+  font-size: 20px;
+  list-style: none;
+}
+.view-recipe-holder .view-recipe-instructions {
+  width: 100%;
+  margin-left: 27%;
+}
+.view-recipe-holder .view-recipe-instructions .instructions-title {
+  margin-top: 58px;
+  font-family: "Lato Black";
+  font-size: 25px;
+  margin-bottom: 35px;
+}
+.view-recipe-holder .view-recipe-instructions ol {
+  font-family: "Caveat";
+  font-size: 20px;
+}
+.view-recipe-holder .button-holder {
+  width: 100%;
+}
+.view-recipe-holder .button-holder .edit-button {
+  margin-top: 60px;
+  margin-bottom: 90px;
+  position: relative;
+  right: 32%;
+  cursor: pointer;
+  border-style: none;
+  height: 42px;
+  width: 128px;
+  border-radius: 30px;
+  font-family: "Caveat";
+  font-size: 20px;
+  background-color: #ffd972;
+  -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+}
+.view-recipe-holder .button-holder .edit-button a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

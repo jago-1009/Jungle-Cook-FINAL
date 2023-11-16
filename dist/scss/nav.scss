@@ -60,6 +60,7 @@
 				font-size: 25px;
 			}
 		}
+		
 	}
 	.hamburger-menu {
 		display: none;
@@ -142,4 +143,7 @@
 	.hamburger-menu {
 		display: block !important;
 	}
+}
+#my-recipes {
+	display: none;
 }

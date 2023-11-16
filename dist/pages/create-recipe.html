@@ -1,0 +1,132 @@
+<div class="create-recipe-holder"><div class="nav-holder">
+	<div class="logo">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="169"
+			height="55"
+			viewBox="0 0 169 55"
+		>
+			<g id="Group_1" data-name="Group 1" transform="translate(-50 -38)">
+				<circle
+					id="Ellipse_1"
+					data-name="Ellipse 1"
+					cx="16"
+					cy="16"
+					r="16"
+					transform="translate(52 38)"
+					fill="#c7eae4"
+				/>
+				<circle
+					id="Ellipse_2"
+					data-name="Ellipse 2"
+					cx="15"
+					cy="15"
+					r="15"
+					transform="translate(76 54)"
+					fill="#ffd972"
+				/>
+				<circle
+					id="Ellipse_3"
+					data-name="Ellipse 3"
+					cx="27"
+					cy="27"
+					r="27"
+					transform="translate(103 39)"
+					fill="#a7e8bd"
+				/>
+				<circle
+					id="Ellipse_4"
+					data-name="Ellipse 4"
+					cx="12"
+					cy="12"
+					r="12"
+					transform="translate(185 57)"
+					fill="#efa7a7"
+				/>
+				<text
+					id="The_Jungle_Cook"
+					data-name="The Jungle Cook"
+					transform="translate(50 74)"
+					font-size="25"
+					font-family="Caveat-Regular, Caveat"
+					letter-spacing="0.1em"
+				>
+					<tspan x="0" y="0">The Jungle Cook</tspan>
+				</text>
+			</g>
+		</svg>
+	</div>
+
+	<div class="nav-links">
+		<ul>
+			<li>
+				<a href="#home">Home</a>
+			</li>
+			<li><a href="#browse">Browse</a></li>
+			<li><a href="#create-recipe">Create Recipe</a>
+                
+            <div class="border"></div></li>
+            <li><a href="#my-recipes" id="my-recipes">My Recipes</a></li>
+
+			<li class="login"><a href="#login">Login</a></li>
+			<li class="logout" id="logoutbutton"><a href="#login">Log Out</a></li>
+		</ul>
+	</div>
+	<div class="hamburger-menu" onclick="toggleMenu(this)">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+		<ul class="mobile-menu">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#browse">Browse</a></li>
+			<li><a href="#create-recipe">Create Recipe</a></li>
+            <li><a href="#my-recipes" id="my-recipes">My Recipes</a></li>
+			<li class="login"><a href="#login">Login</a></li>
+			<li class="logout" id="logoutbutton"><a href="#login">Log Out</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="create-not-signed-in">
+    <div class="not-signed-in-msg">Hey there! It looks like you're not signed in! Click the button below to sign in!</div>
+    <div class="not-signed-in-btn"><a href="#login">Log In or Sign up</a></div>
+</div>
+
+<div class="create-signed-in">
+		<div class="formHolder">
+			<div class="form-title">Recipe</div>
+			<div class="formTop">
+				<div class="imageBtn">Attach Image</div>
+				<input id="imagePath" type="text" placeholder="Image URL / Image Name" />
+				<input type="text" placeholder="Item Name" id="itemName" />
+			</div>
+			<div class="formIngred">
+				<input type="text" placeholder="Ingredient #1" id="Ingred0" />
+				<input type="text" placeholder="Ingredient #2" id="Ingred1" />
+				<input type="text" placeholder="Ingredient #3" id="Ingred2" />
+				<div class="IngredAddBtn">+</div>
+			</div>
+			<div class="formInstr">
+				<input type="text" placeholder="Instruction #1" id="Instr0" />
+				<input type="text" placeholder="Instruction #2" id="Instr1" />
+				<input type="text" placeholder="Instruction #3" id="Instr2" />
+				<div class="InstrAddBtn">+</div>
+			</div>
+			<div class="SubmitBtn">Submit Form</div>
+		</div>
+</div>
+<div class="footer">
+	<div class="copyright">Copyright © 2019 The Jungle Cook</div>
+	<div class="links">
+		<a href="#login" class="login">Login</a>
+		<a href="#browse">Recipes by Category</a>
+		<a href="#copyright">Privacy and Copyright</a>
+		<a href="#create-recipe">Create Recipe</a>
+		<a href="#my-recipes">Your Recipes</a>
+	</div>
+	<div class="socials">
+		<div class="facebook"></div>
+		<div class="instagram"></div>
+	</div>
+</div>
+</div>

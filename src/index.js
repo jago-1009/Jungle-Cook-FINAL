@@ -1,4 +1,10 @@
-// Import the functions you need from the SDKs you need
+//variable initialize
+let IngrNum = 4;
+let InstrNum = 4;
+var recipes = [];
+
+// Import the functions you need from the SDKs and Files you need
+import { changePage, addFormListener } from "./model.js";
 import { initializeApp } from "firebase/app";
 import {
 	getAuth,
@@ -30,52 +36,32 @@ const auth = getAuth(app);
 function loggedInSass() {
 	$(".login").css("display", "none");
 	$(".logout").css("display", "flex");
+	$(".create-signed-in").css("display", "flex");
+	$(".create-not-signed-in").css("display", "none");
+	$("#my-recipes").css("display", "flex");
 }
-
-function checkAuth() {
+function loggedOutSass() {
+	$(".login").css("display", "flex");
+	$(".logout").css("display", "none");
+	$(".create-signed-in").css("display", "none");
+	$(".create-not-signed-in").css("display", "flex");
+	$("#my-recipes").css("display", "none");
+}
+export function checkAuth() {
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			// User is signed in, see docs for a list of available properties
 			// https://firebase.google.com/docs/reference/js/auth.user
 			const uid = user.uid;
+			const splitName = user.displayName.split(" ");
+
 			loggedInSass();
+			$(".form-title").html(`Hey ${splitName[0]}, Create a recipe here!`);
 		} else {
 			// User is signed out
 			console.log("NO USER");
 		}
 	});
-}
-
-export function changePage(pageID) {
-	if (pageID == "") {
-		$.get(`pages/home.html`, (data) => {
-			$("#app").html(data);
-		}).fail(() => {
-			alert("FAIL");
-		});
-		$("#app").html("home");
-		console.log("HOME HOME HOME");
-		$("#bread-crumb").html(``);
-	} else {
-		if (pageID.length == 1) {
-			$("#bread-crumb").html(``);
-			$.get(`pages/${pageID}.html`, (data) => {
-				$("#app").html(data);
-				checkAuth();
-			}).fail(() => {
-				alert("ERROR 404: PAGE NOT FOUND");
-			});
-		} else {
-			$("#bread-crumb").html(
-				`<a href="#${pageID[0]}">${pageID[0]}/</a>${pageID[1]}`
-			);
-			$.get(`pages/${pageID[1]}.html`, (data) => {
-				$("#app").html(data);
-			}).fail(() => {
-				alert("ERROR 404: PAGE NOT FOUND");
-			});
-		}
-	}
 }
 
 function route() {
@@ -88,26 +74,6 @@ function route() {
 }
 
 function initListeners() {
-	$("#app").on("click", "#loginbutton", function (e) {
-		e.preventDefault();
-		let name = $("#fName");
-		let email = $("#emailL").val();
-		let password = $("#passwordL").val();
-		console.log(name);
-		signInWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
-				//Signed In
-				const user = userCredential.user;
-				alert(`Welcome back, ${user.displayName}`)
-				// console.log(user);
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				const errorMsg = error.message;
-				alert(`ERROR: Error code ${errorCode}: ${errorMsg}`);
-			});
-	});
-
 	$("#app").on("click", "#signupbutton", function (e) {
 		e.preventDefault();
 		let fName = $("#fName").val();
@@ -121,10 +87,10 @@ function initListeners() {
 
 				const user = userCredential.user;
 				console.log(user);
-				loggedInSass()
+				loggedInSass();
 				updateProfile(user, { displayName: name });
 				checkAuth();
-				alert(`Thanks for signing up!`)
+				alert(`Thanks for signing up!`);
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -136,12 +102,9 @@ function initListeners() {
 		e.preventDefault();
 		signOut(auth)
 			.then(() => {
-				//Signed In
-				$(".login").css("display", "flex");
-				$(".logout").css("display", "none");
-				alert("You have signed out!")
-				
-
+				//Signed Out
+				loggedOutSass();
+				alert("You have signed out!");
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -149,7 +112,6 @@ function initListeners() {
 				alert(`ERROR: Error code ${errorCode}: ${errorMsg}`);
 			});
 	});
-
 }
 
 function initSite() {

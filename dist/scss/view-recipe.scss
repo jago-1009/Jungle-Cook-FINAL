@@ -1,0 +1,117 @@
+.view-recipe{
+    width:100%;
+    height:100%;
+
+}
+.view-recipe-holder {
+    margin-top:10%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .view-recipe-desc{
+        
+        display: flex;
+        flex-direction: row;
+        width:100%;
+         height:421px;
+        .desc-left{
+            display: flex;
+            width:50%;
+            height:100%;
+            margin-right:40px;
+       
+            .desc-image{
+                width:468px;
+                height:421px;
+                background-size: cover;
+            }
+            .desc-title {
+                top:175px;
+                left:75px;
+                position: relative;
+                white-space: nowrap;
+                height:65px;
+                font-family: 'Lato Black';
+                font-size: 25px;
+                transform: rotate(-90deg);
+            }
+        }
+        .desc-right {
+            font-family: 'Lato Black';
+            width:50%;
+          .desc-right-title {
+            font-size: 25px;
+          }
+          .desc-right-description {
+            margin-top:35px;
+            font-family: 'Caveat';
+            font-size: 20px;
+            margin-bottom: 38px;
+          }
+          .desc-right-time-title, .desc-right-serving-title {
+            font-size: 20px;
+            margin-bottom:32px;
+          }
+          .desc-right-time, .desc-right-serving {
+            font-size: 20px;
+            margin-bottom:38px;
+          }
+        }
+    }
+    .view-recipe-ingredients {
+        width:100%;
+        margin-left: 27%;
+        .ingredients-title {
+            font-family: 'Lato Black';
+            font-size:25px;
+            margin-bottom:35px;
+            margin-top: 58px;
+        }
+        ul {
+            font-family: 'Caveat';
+                font-size: 20px;
+            list-style: none;
+        }
+    }
+        .view-recipe-instructions {
+            width: 100%;
+            margin-left: 27%;
+    
+            .instructions-title {
+                margin-top: 58px;
+                font-family: 'Lato Black';
+                font-size: 25px;
+                margin-bottom: 35px;
+            }
+    
+            ol {
+                
+                font-family: 'Caveat';
+                font-size: 20px;
+            }
+        }
+        .button-holder {
+            width: 100%;
+        .edit-button {
+            a {
+                text-decoration: none;
+            }
+            margin-top:60px;
+            margin-bottom:90px;
+            position: relative;
+            right:32%;
+            cursor: pointer;
+                border-style: none;
+                height: 42px;
+                width: 128px;
+                border-radius: 30px;
+                font-family: 'Caveat';
+                font-size: 20px;
+                background-color: $site-yellow;
+                -webkit-box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+                box-shadow: 1px 5px 15px 3px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
