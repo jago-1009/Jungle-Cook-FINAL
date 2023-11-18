@@ -1,10 +1,9 @@
 //variable initialize
 let IngrNum = 4;
 let InstrNum = 4;
-var recipes = [];
 
 // Import the functions you need from the SDKs and Files you need
-import { changePage, addFormListener } from "./model.js";
+import { changePage, addFormListener, recipes, idxVal } from "./model.js";
 import { initializeApp } from "firebase/app";
 import {
 	getAuth,
@@ -74,6 +73,12 @@ function route() {
 }
 
 function initListeners() {
+	$("#app").on("click", ".delete-button", function (e) {
+		console.log(recipes)
+		recipes.splice(idxVal,1)
+		
+		
+	})
 	$("#app").on("click", "#signupbutton", function (e) {
 		e.preventDefault();
 		let fName = $("#fName").val();

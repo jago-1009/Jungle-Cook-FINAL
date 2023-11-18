@@ -1,10 +1,15 @@
 import { checkAuth } from "../src/index.js";
-var recipes = [];
+export var recipes = [];
 let IngrNum = 4;
 let InstrNum = 4;
-let idxVal = -1;
-let editIngrNum = 4
-let editInstrNum = 4
+export let idxVal = -1;
+let editIngrNum = 4;
+let editInstrNum = 4;
+
+
+function removeRecipe(idx) {
+	recipes.splice(idx,1)
+}
 function setIndexValue(num) {
 	idxVal = num;
 	console.log(idxVal);
@@ -24,7 +29,7 @@ export function addEditListener() {
 	$(".InstrEditBtn").on("click", (e) => {
 		$(".formInstr").append(
 			`<input type="text" placeholder="Instruction #${editInstrNum}" id="Instr${
-				editInstrNum-1
+				editInstrNum - 1
 			}" />`
 		);
 		editInstrNum++;
@@ -58,10 +63,13 @@ export function addEditListener() {
 						instruction: value,
 					};
 					RecipeObj.InstrList.push(InstrObj);
+					
 				}
+				
 			}
-			recipes.splice(idxVal,1)
+			recipes.splice(idxVal, 1);
 			addRecipe(RecipeObj);
+			
 		} else {
 			alert("Your Image Path is Invalid. Please Try Again");
 		}
@@ -178,12 +186,14 @@ export function changePage(pageID) {
             <button class="edit-button" onclick = "${setIndexValue(
 							idx
 						)}"><a href="#edit-recipe">Edit Recipe</a></button>
-            <button class="delete-button">Delete</button>
+            <button class="delete-button" onclick="${setIndexValue(idx)}">
+			Delete
+			</button>
         </div>
         <div class="view-button-holder">
         <button class="view-button" ${setIndexValue(
-							idx
-						)}><a href= "#view-recipe">View</a></button>
+					idx
+				)}><a href="#view-recipe">View</a></button>
         </div>
         </div>`);
 					});
@@ -195,7 +205,7 @@ export function changePage(pageID) {
 			$.get(`pages/${pageID}.html`, (data) => {
 				$("#app").html(data);
 				checkAuth();
-				
+
 				if (idxVal !== -1) {
 					console.log("RECIPE", recipes[idxVal]);
 					$("#edit-recipe-form").append(`	<div class="formHolder">
@@ -237,15 +247,14 @@ export function changePage(pageID) {
 						`<h1 class="no-recipes-msg">You have no recipes available.</h1>`
 					);
 				}
-			addEditListener();}
-			);
-		}
-		else if (pageID =="view-recipe"){
+				addEditListener();
+			});
+		} else if (pageID == "view-recipe") {
 			$.get(`pages/${pageID}.html`, (data) => {
 				$("#app").html(data);
 				checkAuth();
 				if (idxVal !== -1) {
-										$(".view-recipe").append(`
+					$(".view-recipe").append(`
 			
 <!-- NAV BAR -->
 <div class="nav-holder">
@@ -292,7 +301,7 @@ export function changePage(pageID) {
             <li><a href="#home">Home</a></li>
             <li><a href="#browse">Browse</a></li>
             <li><a href="#create-recipe">Create Recipe</a></li>
-            <li><a href="#my-recipes" id="my-recipes">My Recipes</a></li>
+            <li id="my-recipes"><a href="#my-recipes" id="my-recipes">My Recipes</a></li>
             <li class="login"><a href="#login">Login</a></li>
             <li class="logout" id="logoutbutton"><a href="#login">Log Out</a></li>
         </ul>
@@ -303,42 +312,48 @@ export function changePage(pageID) {
     <div class="view-recipe-desc">
     <div class="desc-left">
         <div class="desc-title">Supreme Pizza</div>
-        <div class="desc-image" style="background-image: url('${recipes[idxVal].imagePath}')"></div>
+        <div class="desc-image" style="background-image: url('${
+					recipes[idxVal].imagePath
+				}')"></div>
     </div>
     <div class="desc-right">
         <div class="desc-right-title">Description:</div>
         <div class="desc-right-description">This recipe is your own! You set it!</div>
         <div class="desc-right-time-title">Total Time:</div>
-        <div class="desc-right-time">${Math.floor(Math.random() * 5)}h ${Math.floor(Math.random() * 59)}m</div>
+        <div class="desc-right-time">${Math.floor(
+					Math.random() * 5
+				)}h ${Math.floor(Math.random() * 59)}m</div>
         <div class="desc-right-serving-title">Servings:</div>
-        <div class="desc-right-time">${Math.floor(Math.random() * 10)} servings</div>
+        <div class="desc-right-time">${Math.floor(
+					Math.random() * 10
+				)} servings</div>
     </div>
     </div>
     <div class="view-recipe-ingredients">
         <div class="ingredients-title">Ingredients:</div>
         <ul>
             ${(() => {
-					let htmlString = "";
-					$.each(recipes[idxVal].IngrList, (idx, ingredient) => {
-						htmlString += `<li>${ingredient.ingredient}</li>`;
-					});
-					return `${htmlString}`;
-				})()}
+							let htmlString = "";
+							$.each(recipes[idxVal].IngrList, (idx, ingredient) => {
+								htmlString += `<li>${ingredient.ingredient}</li>`;
+							});
+							return `${htmlString}`;
+						})()}
         </ul>
     </div>
     <div class="view-recipe-instructions">
         <div class="instructions-title">Instructions:</div>
         <ol>
             ${(() => {
-					let htmlString = "";
-					$.each(recipes[idxVal].InstrList, (idx, instruction) => {
-						htmlString += `<li>${instruction.instruction}</li>`;
-					});
-					return `${htmlString}`;
-				})()}
+							let htmlString = "";
+							$.each(recipes[idxVal].InstrList, (idx, instruction) => {
+								htmlString += `<li>${instruction.instruction}</li>`;
+							});
+							return `${htmlString}`;
+						})()}
         </ol>
     </div>
-    <div class="button-holder"><button class="edit-button">Edit Recipe</button></div>
+    <div class="button-holder"><button class="edit-button"><a href="#edit-recipe">Edit Recipe</a></button></div>
 
 </div>
 <!-- BEGINNING OF FOOTER -->
@@ -359,14 +374,12 @@ export function changePage(pageID) {
 <!-- END OF FOOTER -->
 
 
-					`)
-				
+					`);
 				}
 			}).fail(() => {
 				alert("ERROR 404: PAGE NOT FOUND");
 			});
-		}
-		 else {
+		} else {
 			$.get(`pages/${pageID}.html`, (data) => {
 				$("#app").html(data);
 				checkAuth();

@@ -150,3 +150,9 @@
     color: white;
     font-weight: bold;
 }
+
+@media (max-width:768px) {
+.formHolder {
+	width: 500px;
+}
+}

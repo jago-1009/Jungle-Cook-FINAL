@@ -1,6 +1,10 @@
 .my-recipe-box-holder {
     position: relative;
     margin-bottom: 50px;
+    a {
+        text-decoration: none;
+        color:black;
+    }
 }
 .my-recipes {
     display: flex;
