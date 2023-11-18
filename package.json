@@ -9,7 +9,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"compile:sass": "sass dist/scss/styles.scss dist/css/styles.css -w",
 		"serve:": "live-server dist",
-		"build-webpack": "webpack"
+		"build-webpack": "webpack",
+		"build": "build"
 	},
 	"keywords": [],
 	"author": "",
