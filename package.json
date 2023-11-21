@@ -10,7 +10,7 @@
 		"compile:sass": "sass dist/scss/styles.scss dist/css/styles.css -w",
 		"serve:": "live-server dist",
 		"build-webpack": "webpack",
-		"build": "build"
+		"build": "firebase deploy"
 	},
 	"keywords": [],
 	"author": "",

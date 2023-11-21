@@ -44,22 +44,24 @@ function loggedOutSass() {
 	$(".logout").css("display", "none");
 	$(".create-signed-in").css("display", "none");
 	$(".create-not-signed-in").css("display", "flex");
-	$("#my-recipes").css("display", "none");
+	$(".my-recipes").css("display", "none");
 }
 export function checkAuth() {
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			// User is signed in, see docs for a list of available properties
 			// https://firebase.google.com/docs/reference/js/auth.user
+			loggedInSass();
 			const uid = user.uid;
 			const splitName = user.displayName.split(" ");
 
-			loggedInSass();
+			
 			$(".form-title").html(`Hey ${splitName[0]}, Create a recipe here!`);
 		} else {
 			// User is signed out
 			console.log("NO USER");
 		}
+		
 	});
 }
 

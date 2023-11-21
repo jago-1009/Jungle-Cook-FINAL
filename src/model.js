@@ -239,7 +239,7 @@ export function changePage(pageID) {
 				})()}
 				<div class="InstrEditBtn">+</div>
 			</div>
-			<div class="submitChangesBtn">Submit Form</div>
+			<div class="submitChangesBtn">Submit Changes</div>
 		</div>`);
 				} else {
 					console.log("NO RECIPES");
@@ -301,7 +301,7 @@ export function changePage(pageID) {
             <li><a href="#home">Home</a></li>
             <li><a href="#browse">Browse</a></li>
             <li><a href="#create-recipe">Create Recipe</a></li>
-            <li id="my-recipes"><a href="#my-recipes" id="my-recipes">My Recipes</a></li>
+            <li class="my-recipes"><a href="#my-recipes" class="my-recipes">My Recipes</a></li>
             <li class="login"><a href="#login">Login</a></li>
             <li class="logout" id="logoutbutton"><a href="#login">Log Out</a></li>
         </ul>
